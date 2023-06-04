@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <title>localização</title>
+    <link rel="stylesheet" type="text/css" href="../cafeteria/css/estilo.css">
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: Arial, sans-serif;
+          background-color: white;
+          padding: 20px;
+          margin: 0;
+          background-color: #fde4c4;
+        }
+
+        h1 {
+          text-align: center;
+          color: #873600;
+          margin-bottom: 30px;
+        }
+
+        .coffee-gif {
+          display: block;
+          margin: 0 auto;
+          max-width: 300px;
+          height: auto;
+        }
+
+        .rating {
+          unicode-bidi: bidi-override;
+          direction: rtl;
+          text-align: center;
+          font-size: 0;
+          margin: 20px auto;
+        }
+
+        .rating > input {
+          display: none;
+        }
+
+        .rating > label {
+          display: inline-block;
+          position: relative;
+          width: 30px;
+          height: 30px;
+          margin: 0 2px;
+          cursor: pointer;
+        }
+
+        .rating > label:before {
+          content: '\2605';
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-size: 24px;
+          color: #ccc;
+          transition: color 0.3s;
+        }
+
+        .rating > input:checked ~ label:before,
+        .rating > input:hover ~ label:before {
+          color: #ffcc00;
+        }
+
+        .rating > input:checked + label:before {
+          content: '\2605';
+        }
+
+        .rating > input:hover + label:before {
+          content: '\2605';
+          color: #ffcc00;
+        }
+
+        .rating-text {
+          text-align: center;
+          font-size: 18px;
+          margin-top: 10px;
+          display: none;
+        }
+
+        .thanks-message {
+          text-align: center;
+          font-size: 20px;
+          margin-top: 30px;
+          color: #873600;
+        }
+      </style>
+    
+</head>
+
+<body>
+    <header class="legal">
+        <section id="cabecalho">
+            <section class="secao" id="grid-secao">
+                <div class="grid">
+                    <picture>
+                    <div><a href="../index.html"  > <img class="logo" src="../image/logo.png" alt="logo.png" ></a></div>
+                    </picture>
+                    <div><a href="sobre.html"  class="links"><img src="../image/sobre.png" alt="imagemsobre" class="imagensdiv"></a></div>
+                    <div><a href="cardapio.pdf" target="_blank"><img src="../image/cardapio.png" alt="imagenscardapio" class="imagensdiv"></a></div>
+                    <div><a href="localização.html"  class="links">Localização</a></div>
+                    <div><a href="reserva.html"  class="links"><img src="../image/reserva.png" alt="imagemreserva" class="imagensdiv"></a></div>
+                    <div><a href="avaliações.html" class="links" >avaliar</a></div>
+                </div>
+            </section>
+        </section>
+    </header >
+    <h1>Avalie nosso serviço</h1>
+    <figure>
+        <img src="C:\Users\thiag\OneDrive\Área de Trabalho\Tudo\cornfield_atualizado\image\caffe.gif" alt="Café Gif" class="coffee-gif">
+    </figure>
+
+    <form>
+      <div class="rating">
+        <input type="radio" id="star5" name="rating" value="5">
+        <label for="star5"></label>
+        <input type="radio" id="star4" name="rating" value="4">
+        <label for="star4"></label>
+        <input type="radio" id="star3" name="rating" value="3">
+        <label for="star3"></label>
+        <input type="radio" id="star2" name="rating" value="2">
+        <label for="star2"></label>
+        <input type="radio" id="star1" name="rating" value="1">
+        <label for="star1"></label>
+      </div>
+      <div class="rating-text">
+        Obrigado por avaliar com <span id="selectedRating">0</span> estrelas!
+      </div>
+    </form>
+
+    <div class="thanks-message">
+      Obrigado por escolher a Cornfield Coffee!
+    </div>
+
+    <script>
+      const ratingInputs = document.querySelectorAll('.rating input');
+      const selectedRatingText = document.getElementById('selectedRating');
+      const ratingText = document.querySelector('.rating-text');
+      const thanksMessage = document.querySelector('.thanks-message');
+
+      ratingInputs.forEach(input => {
+        input.addEventListener('change', () => {
+          selectedRatingText.textContent = input.value;
+          ratingText.style.display = 'block';
+          thanksMessage.style.display = 'block';
+        });
+      });
+    </script>
+
+</body>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Pedidos</title>
+    <script>
+        function mostrarItensSelecionados() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    var itensSelecionados = [];
+    checkboxes.forEach(function(checkbox) {
+        itensSelecionados.push(checkbox.value);
+    });
+
+    var itensSelecionadosElement = document.getElementById('itens-selecionados');
+    itensSelecionadosElement.innerHTML = '';
+
+    if (itensSelecionados.length > 0) {
+        var titulo = document.createElement('h3');
+        titulo.textContent = 'Itens selecionados:';
+        itensSelecionadosElement.appendChild(titulo);
+        var lista = document.createElement('ul');
+        itensSelecionados.forEach(function(item) {
+            var itemLista = document.createElement('li');
+            itemLista.textContent = item;
+            lista.appendChild(itemLista);
+        });
+        itensSelecionadosElement.appendChild(lista);
+    } else {
+        itensSelecionadosElement.textContent = 'Nenhum item selecionado.';  
+    }
+}
+    </script>
+</head>
+<body>
+
+     <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333333;
+        }
+
+        form {
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #666666;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        label {
+            color: #333333;
+        }
+
+        input[type="submit"] {
+            background-color: #333333;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 10px 20px;
+            margin-top: 10px;
+        }
+
+        #itens-selecionados {
+            border: 1px solid #333333;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+            color: #333333;
+            background-color: white;
+        }
+
+        #itens-selecionados h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            margin-top: 0;
+        }
+
+        #itens-selecionados ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #itens-selecionados li {
+            margin-bottom: 5px;
+        }
+
+        #itens-selecionados li::before {
+            content: "•";
+            margin-right: 5px;
+        }
+
+       
+    </style>
+
+    <h1>Reserva</h1>
+
+    <form onsubmit="mostrarItensSelecionados(); return false;">
+        <h2>Bebidas</h2>
+        <input type="checkbox" name="pedido" value="cafe preto">
+        <label for="cafe preto">Cafe Preto</label><br>
+        <input type="checkbox" name="pedido" value="capuccino">
+        <label for="capuccino">Capuccino</label><br>
+        <input type="checkbox" name="pedido" value="cha">
+        <label for="cha">Cha</label><br>
+        <input type="checkbox" name="pedido" value="late quente">
+        <label for="late quente">Late Quente</label><br>
+
+        <h2>Salgados</h2>
+        <input type="checkbox" name="pedido" value="pao de queijo">
+        <label for="pao de queijo">Pao De Queijo</label><br>
+        <input type="checkbox" name="pedido" value="coxinha">
+        <label for="coxinha">Coxinha</label><br>
+        <input type="checkbox" name="pedido" value="croissant">
+        <label for="croissant">Croissant</label><br>
+        <input type="checkbox" name="pedido" value="broa de milho sinistra">
+        <label for="broa de milho sinistra">Broa De Milho Sinistra</label><br>
+
+        <h2>Doces</h2>
+        <input type="checkbox" name="pedido" value="bolo de chocolate">
+        <label for="bolo de chocolate">Bolo De Chocolate</label><br>
+        <input type="checkbox" name="pedido" value="brigadeiro">
+        <label for="brigadeiro">Brigadeiro</label><br>
+        <input type="checkbox" name="pedido" value="brownie">
+        <label for="brownie">Brownie</label><br>
+        <input type="checkbox" name="pedido" value="cookie">
+        <label for="cookie">Cookie</label><br>
+
+        <input type="submit" value="Fazer Pedido">
+    </form>
+
+    <div id="itens-selecionados"></div>
+</body>
+</html>
