@@ -40,6 +40,10 @@ img {
     cursor: pointer;
 }
 
+#cafesinistro2 {
+    background-color: rgb(rgb(131, 77, 8));
+}
+
 p {
     font-size: 1.8rem;
     font-family: Arial;
