@@ -40,6 +40,11 @@ img {
     cursor: pointer;
 }
 
+.imagemsustentabilidade {
+    width: 100%;
+    height: 80%;
+}
+
 #cafesinistro2 {
     background-color: rgb(rgb(131, 77, 8));
 }
