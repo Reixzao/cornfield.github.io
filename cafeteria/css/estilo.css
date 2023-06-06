@@ -72,6 +72,15 @@ p {
     margin-right: 30px;
 }
 
+.grid2{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 3px;
+    text-align: justify;
+    margin-right: 30px;
+
+}
+
 .grid:hover > :not(:hover) {
     opacity: .7;
     transform: scale(0.9);
