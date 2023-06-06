@@ -45,6 +45,10 @@ img {
     height: 80%;
 }
 
+.textosustentabilidade {
+    text-align: justify;
+}
+
 #cafesinistro2 {
     background-color: rgb(131, 77, 8);
 }
