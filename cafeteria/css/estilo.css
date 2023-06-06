@@ -35,23 +35,36 @@ img {
 
 .imagensdiv {
     width: 100%;
-    height: 80%;
+    height: 78%;
     transition: .35s;
     cursor: pointer;
 }
 
-.imagemsustentabilidade {
-    width: 50%;
-    height: 30%;
+
+
+.outracoisa {
+    width: 27em;
+    height: 22em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imagemcafesinistro {
+    width: 100%;
+    height: 95%;
+    
+}
+
+.textocafesinistro {
+    font-size: 2.2rem;
+    padding-top: 100px;
 }
 
 .textosustentabilidade {
     text-align: justify;
 }
 
-#cafesinistro2 {
-    background-color: rgb(131, 77, 8);
-}
 
 p {
     font-size: 1.8rem;
@@ -72,14 +85,17 @@ p {
     margin-right: 30px;
 }
 
-.grid2{
+.grid2 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     gap: 3px;
-    text-align: justify;
-    margin-right: 30px;
-    background-color: rgb(131, 77, 8);
+    text-align: left;
+    margin-right: 30fr;
+}
 
+.secao2 {
+    background-color: rgb(153, 109, 51);
+    width: 45em;
 }
 
 .grid:hover > :not(:hover) {
@@ -104,10 +120,20 @@ p {
 }
 
 .logo {
-    height: 100%;
-    width: 75%;
-  
+    width: 100%;
+    height: 80%;
+    transition: .35s;
+    cursor: pointer;
 }
+
+.logoo{
+    width: 100%;
+    height: 95%;
+    transition: .35s;
+    cursor: pointer;
+}
+
+
 
 
 footer {
@@ -126,7 +152,16 @@ footer {
     width: 100%;
     padding: 0px;
     margin: 0px;
-    padding: 0px;
+    box-shadow: 2px 2px #000;
+}
+
+.legall
+{
+
+    background-color: rgb(247, 197, 123);
+    width: 100%;
+    margin: 0px;
+    padding: 6px;
     box-shadow: 2px 2px #000;
 }
 
